@@ -117,4 +117,4 @@ We needed to name at least 2 servers we were connected to.
 
 We started early by taking our assignment6 tsamserver and client, and made some additions to be able to run the server on the tsamserver, so we could gather logs for some bonus points.  The log however was produced by the first version of the tsamserver, which just included framing, dropping malformed data, logging all events, sending HELO on every connection,, connect from the client to dial another server, SENDMSG, and store messages. Then later we finished the code and it includes everything in our submission.
 We were very busy and had much to do and unfortunately could not proceed to finish on time but at least we managed to get the server up to receive some inital logs for some bonus points. Therefore in the logs you will for example see a lot of "STATUSREQ not implemented yet". 
-We used an AI assistant to explain important concepts, to simply break them down and explain them more in depth so we could understand better what was going on.
+We used an AI assistant to explain important concepts, to simply break them down and explain them more in depth so we could understand them better.
