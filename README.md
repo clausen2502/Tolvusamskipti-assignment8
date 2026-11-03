@@ -113,9 +113,8 @@ We needed to name at least 2 servers we were connected to.
 - 3 Nov `2026-11-03T15:52:45Z` RECV from I_dispatch: Credited: dispatch 0 (Roll call), with the fragment
 - 3 Nov `2026-11-03T15:53:39Z` Our client fetched the credited reply and fragment "Löng ekkasog haustfiðlanna"
 
-## Design choices, statement of authorship
+## Implementation
 
-Isak started by taking our assignment6 tsamserver and client, and made some additions to be able to
-run the server on the tsamserver, so we could gather logs for some bonus points.  We took and used the
-A6 skeleton that we recieved from the teachers to finish a6, and built on that. The log however was produced by the first version of the tsamserver which Isak put up, which just included framing, dropping malformed data, logging all events, sending HELO on every connection,, connect from the client to dial another server, SENDMSG, and store messages. Then we finished the code and it includes everything in our submission.
-We were very busy and had much to do and unfortunately could not proceed to finish on time but at least Isak managed to get the server up to receive some inital logs for some bonus points. Therefore in the logs you will see a lot of "STATUSREQ and STATUSRESP not implemented yet". We used an AI assistant to explain concepts some like how framing works, what poll() does and to simply break down and explain concepts that could help us understand them better.
+We started early by taking our assignment6 tsamserver and client, and made some additions to be able to run the server on the tsamserver, so we could gather logs for some bonus points.  The log however was produced by the first version of the tsamserver, which just included framing, dropping malformed data, logging all events, sending HELO on every connection,, connect from the client to dial another server, SENDMSG, and store messages. Then later we finished the code and it includes everything in our submission.
+We were very busy and had much to do and unfortunately could not proceed to finish on time but at least we managed to get the server up to receive some inital logs for some bonus points. Therefore in the logs you will for example see a lot of "STATUSREQ not implemented yet". 
+We used an AI assistant to explain important concepts, to simply break them down and explain them more in depth so we could understand better what was going on.
