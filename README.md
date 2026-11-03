@@ -73,21 +73,18 @@ Both messages arrived before the deadline, but our client fetched them on 3 Nov,
 
 ### Messages sent to two groups (1d)
 
-Our client must send messages to at least 2 different groups, and our server must forward the messages to their servers.
-
 - G_minions `2026-10-27T10:43:01Z` RECV SENDMSG from our client `2026-10-27T10:43:01Z` SEND to G_minions
 - G_yourname `2026-11-03T15:54:29Z` RECV SENDMSG from our client `2026-11-03T15:54:29Z` SEND to G_yourname
 - G_leo `2026-11-03T15:55:08Z` RECV SENDMSG from our client `2026-11-03T15:55:08Z` SEND to G_leo
 
-The message to G_minions was sent before the deadline. The messages to G_yourname and G_leo were sent on 3 Nov, after the deadline.
+The message to G_minions was sent before the deadline, but the messages to G_yourname and G_leo were sent on 3 nov, after the deadline
 
 ## Bonus points
 
 ### Ready Bot (2b)
 
 Our server was connected to the botnet and responding on at least 5 days, for at least 2 hours each.
-Each window starts at the timestamp, commands from other servers arrive at least once a minute
-throughout, and our server replies
+Each window starts at the timestamp, commands from other servers arrive at least once a minute throughout, and our server replies
 
 - 28 Oct  `2026-10-28T10:00:39Z` RECV from G_minions (KEEPALIVE)  `2026-10-28T10:02:18Z` SEND SERVERS to G_unit 
 - 29 Oct  `2026-10-29T10:00:44Z` RECV from G_yourname (KEEPALIVE)  `2026-10-29T10:19:44Z` SEND SERVERS to G_minions 
@@ -97,7 +94,7 @@ throughout, and our server replies
 
 ### Edge Bot (2e)
 
-The SERVERS replies in our log show at least 3 student servers connected at each timestamp, with no instructor servers listed.
+The SERVERS replies in our log show at least 3 student servers connected at each timestamp.
 
 - 27 Oct `2026-10-27T13:02:34Z` SEND SERVERS to G_SHE (G_SHE, G_minions, G_swaws)
 - 28 Oct `2026-10-28T09:31:23Z` SEND SERVERS to G_blueberries (G_blueberries, G_minions, G_yourname)
@@ -105,11 +102,9 @@ The SERVERS replies in our log show at least 3 student servers connected at each
 - 28 Oct `2026-10-28T11:37:08Z` SEND SERVERS to G_ellur (G_ellur, G_minions, G_yourname)
 - 28 Oct `2026-10-28T12:49:09Z` SEND SERVERS to G_ellur (G_ellur, G_minions, G_yourname)
 
-All 5 occasions were at least 1 hour apart and before the deadline.
-
 ### Courier (2g)
 
-The dispatch arrived before the deadline, but we completed the task and sent the reply on 3 Nov, after the deadline.
+The dispatch arrived before the deadline, but we completed the task and sent the reply on 3 Nov, which is after the deadline
 We needed to name at least 2 servers we were connected to.
 
 - 31 Oct `2026-10-31T21:50:11Z` RECV DISPATCH 0 through G_kiwi (token 8f3b106534f13b87)
@@ -123,5 +118,5 @@ We needed to name at least 2 servers we were connected to.
 Isak started by taking our assignment6 tsamserver and client, and made some additions to be able to
 run the server on the tsamserver, so we could gather logs for some bonus points.  We took and used the
 A6 skeleton that we recieved from the teachers to finish a6, and built on that. The log however was produced by the first version of the tsamserver which Isak put up, which just included framing, dropping malformed data, logging all events, sending HELO on every connection,, connect from the client to dial another server, SENDMSG, and store messages. Then we finished the code and it includes everything in our submission.
-We were very busy and had much to do and unfortunately could not proceed to finish on time but at least Isak managed to get the server up to receive some inital logs for some bonus points. Therefore in the logs you will see a lot of "STATUSREQ and STATUSRESP not implemented yet", Isak did that at first because we wanted to be able to get at least some bonus points.
-Isak created the getFrame the switch to log_event, added new client fields, the HELO/SERVERS handshake, connect and the first SENDMSG, findServer and localIp. Siggi then finished the STATUSRESP, GETMSG, SERVERS, the KEEPALIVE timer and the first peer maintenance. Orri wrote the connect, sendReply, MSG_NOSIGNAL, deliverHeld and the isConnectedTo, and we all then did some final polishing. We used an AI assistant to explain concepts like how the framing works, what poll() does and to simply break down and explain depth concepts that could help us understand more clear. 
+We were very busy and had much to do and unfortunately could not proceed to finish on time but at least Isak managed to get the server up to receive some inital logs for some bonus points. Therefore in the logs you will see a lot of "STATUSREQ and STATUSRESP not implemented yet", Isak did that at first because we wanted to be able to get at least some bonus points
+Isak created the getFrame the switch to log_event, added new client fields, the HELO/SERVERS handshake, connect and the first SENDMSG, findServer and localIp. Siggi then finished the STATUSRESP, GETMSG, SERVERS, the KEEPALIVE timer and the first peer maintenance. Orri wrote the connect, sendReply, MSG_NOSIGNAL, deliverHeld and the isConnectedTo, and we all then did some final polishing. We used an AI assistant to explain concepts like how the framing works, what poll() does and to simply break down and explain concepts that could help us understand them better.
